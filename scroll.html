@@ -1,0 +1,172 @@
+
+
+
+<html>
+
+    <head>
+    
+    
+        <title>SideBar JavaScript</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!--  <link rel="stylesheet" href="reviews.css"> 
+       <script src="reviews.js"></script>  --> 
+       <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
+        <script src="https://use.fontawesome.com/031e3862f6.js"></script>
+
+        <style>
+
+
+           body{
+               background-image: url("https://vannilla-js-basic-project-10-scroll.netlify.app/hero-bcg.jpeg");
+              
+               background-repeat: no-repeat;
+               background-position: center;
+               background-size: cover;
+           }
+           
+           body::after{
+               content:"";
+               background-image: linear-gradient( rgba(122,185,186,0.9), rgba(47, 67, 56, 0.4));
+               z-index: -1;
+               position: absolute;
+               top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+
+           }
+           #outer_topbar{
+               background-color: white;
+               width: 100%;
+               height: auto;
+               padding: 0;
+              margin: 0;
+
+           }
+           #topbar{
+               width:80vw;
+               margin: auto;
+              background-color: red;
+             
+             
+           }
+           #topbar img{
+            width:60px;
+            height:60px;
+            float:left;
+            padding: 0;
+            margin: 0;
+
+           }
+
+           #navbar{
+
+            color:white;
+            float:right;
+            padding: 5px;
+           
+           }
+           #navbar a{
+
+            cursor: pointer;
+            letter-spacing: 3px;
+            padding: 10px;
+            font-size: 22px;
+            padding-top: 30px;
+            
+           }
+
+           #content{
+               clear:both;
+            width:40vw;
+            margin: auto;
+            text-align: center;
+            color: white;
+            transform: translate(0,30vh);
+
+           }
+
+           #content h1{
+            font-family: 'Roboto', sans-serif;
+            
+            font-size: 60px;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+            letter-spacing: 3px;
+
+           }
+           #content p{
+
+            font-size: 17px;
+           }
+           #explore{
+
+            border: 2px solid white;
+            padding: 15px;
+            letter-spacing: 3px;
+            color: white;
+            font-weight: 800;
+            background: rgba(255,255,255,0);
+            cursor: pointer;
+            transition: background-color 1s;
+           }
+
+           #explore:hover{
+               background-color: white;
+               color:skyblue;
+              
+
+           }
+
+        </style>
+        
+    
+        
+    </head>
+
+
+    <body>
+
+        <div id="outer_topbar">
+        <div id="topbar">
+            <img src="https://vannilla-js-basic-project-10-scroll.netlify.app/logo.svg">
+            <div id="navbar">
+
+                <a hred="">Home</a>
+
+                <a hred="">About</a>
+
+                <a hred="">Services</a>
+
+                <a hred="">Tours</a>
+
+
+
+            </div>
+
+
+
+        </div>
+        </div>
+
+        <div id="content">
+            <h1>SCROLL PROJECT</h1>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas eos neque sunt in? Id, necessitatibus quos quisquam distinctio laudantium fugiat?</p>
+            <button id="explore">EXPLORE TOURS</button>
+        </div>
+       
+
+
+        <script>
+
+
+
+
+        </script>
+        
+   
+    </body>
+
+
+</html>
