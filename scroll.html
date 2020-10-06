@@ -22,6 +22,8 @@
                background-repeat: no-repeat;
                background-position: center;
                background-size: cover;
+               padding: 0;
+               margin: 0;
            }
            
            body::after{
@@ -36,21 +38,27 @@
 
            }
            #outer_topbar{
-               background-color: white;
+               
                width: 100%;
                height: auto;
                padding: 0;
-              margin: 0;
+               margin: 0;
+               position: fixed;
+               top:0px;
+           
 
            }
            #topbar{
                width:80vw;
                margin: auto;
-              background-color: red;
+             
+              overflow: hidden;
+              padding-top: 10px;
              
              
            }
            #topbar img{
+            
             width:60px;
             height:60px;
             float:left;
@@ -60,10 +68,11 @@
            }
 
            #navbar{
-
+           
             color:white;
             float:right;
             padding: 5px;
+            padding-top: 10px;
            
            }
            #navbar a{
