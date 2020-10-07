@@ -14,19 +14,18 @@
         <script src="https://use.fontawesome.com/031e3862f6.js"></script>
 
         <style>
-
+           html { height: 100%; 
+            overflow:auto; }
 
            body{
-               background-image: url("https://vannilla-js-basic-project-10-scroll.netlify.app/hero-bcg.jpeg");
-              
-               background-repeat: no-repeat;
-               background-position: center;
-               background-size: cover;
+               
                padding: 0;
                margin: 0;
+              
+
            }
            
-           body::after{
+           /*body::after{
                content:"";
                background-image: linear-gradient( rgba(122,185,186,0.9), rgba(47, 67, 56, 0.4));
                z-index: -1;
@@ -36,18 +35,55 @@
                 right: 0;
                 bottom: 0;
 
+           }*/
+           #container{
+            background-image: url("https://vannilla-js-basic-project-10-scroll.netlify.app/hero-bcg.jpeg");
+                height: 100vh;
+                width: 100vw;
+               background-repeat: no-repeat;
+               background-position: center;
+               background-size:100vw 100vh;
+               object-fit: cover;
+               position: relative;
+               z-index: 0;
+               top:0;
+               
+            
            }
+
+          #container::after{
+            content: "";
+            background-image: linear-gradient( rgba(122,185,186,0.9), rgba(47, 67, 56, 0.4));
+            position: absolute;
+            z-index: -1;
+            top:0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+
+           } 
+
+          
+
+
            #outer_topbar{
                
                width: 100%;
                height: auto;
                padding: 0;
                margin: 0;
-               position: fixed;
-               top:0px;
-           
+              position: fixed;
+              top:0;
+              
+              
+           } 
 
+           .topbar_bg{
+               background-color: white;
+               box-shadow: 3px 3px 20px grey;
+               
            }
+
            #topbar{
                width:80vw;
                margin: auto;
@@ -73,6 +109,7 @@
             float:right;
             padding: 5px;
             padding-top: 10px;
+            
            
            }
            #navbar a{
@@ -82,20 +119,26 @@
             padding: 10px;
             font-size: 22px;
             padding-top: 30px;
+            text-decoration: none;
+            color:white;
             
            }
 
-           #content{
+           #home{
                clear:both;
             width:40vw;
             margin: auto;
             text-align: center;
             color: white;
-            transform: translate(0,30vh);
+           padding-top: 40vh;
+            
+           
+            
+           
 
            }
 
-           #content h1{
+           #home h1{
             font-family: 'Roboto', sans-serif;
             
             font-size: 60px;
@@ -105,7 +148,7 @@
             letter-spacing: 3px;
 
            }
-           #content p{
+           #home p{
 
             font-size: 17px;
            }
@@ -127,6 +170,29 @@
               
 
            }
+           .content{
+               text-align: center;
+               font-size: 40px;
+           }
+           .menu_item{
+               padding: 0;
+               margin: 0;
+            text-align: center;
+            letter-spacing: 3px;
+            color:#102A42;
+            background-color: #F1F5F8;
+            height: 70vh;
+           }
+           .title{
+               padding: 0;
+               margin: 0;
+           }
+           .us{
+
+            color:#40CFD4;
+           }
+
+           
 
         </style>
         
@@ -136,19 +202,19 @@
 
 
     <body>
-
+       <div id="container">
         <div id="outer_topbar">
         <div id="topbar">
             <img src="https://vannilla-js-basic-project-10-scroll.netlify.app/logo.svg">
             <div id="navbar">
 
-                <a hred="">Home</a>
+                <a href="#home">Home</a>
 
-                <a hred="">About</a>
+                <a href="#about">About</a>
 
-                <a hred="">Services</a>
+                <a href="#services">Services</a>
 
-                <a hred="">Tours</a>
+                <a href="#features">Tours</a>
 
 
 
@@ -159,15 +225,89 @@
         </div>
         </div>
 
-        <div id="content">
+        <div id="home">
             <h1>SCROLL PROJECT</h1>
             <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quas eos neque sunt in? Id, necessitatibus quos quisquam distinctio laudantium fugiat?</p>
             <button id="explore">EXPLORE TOURS</button>
         </div>
-       
+
+        
+
+      </div>
+      <div id="about" class="menu_item">
+        <h1 class="title">ABOUT <span class="us">US</span></h1>
+
+
+    </div>
+    <div id="services" class="menu_item" style="background-color: #FFFFFF;">
+        <h1 class="title">OUR <span class="us">SERVICES</span></h1>
+
+
+    </div>
+    <div id="features" class="menu_item">
+        <h1 class="title">FEATURED <span class="us">TOURS</span></h1>
+
+
+    </div>
 
 
         <script>
+
+            window.onload = function(){
+
+                document.querySelector("body").onscroll=function(){
+
+
+                    if(document.body.scrollTop > 100){
+
+                        document.getElementById("outer_topbar").classList.add("topbar_bg");
+                     var links = document.querySelector("#navbar").children;
+                     console.log(links)
+                        for(var i=0 ; i < links.length ; i++){
+
+                            links[i].style.color = "black";
+
+                        } 
+                     
+
+                    }else{
+
+                        document.getElementById("outer_topbar").classList.remove("topbar_bg");
+
+                        var links = document.querySelector("#navbar").children;
+                        console.log(links)
+                        for(var i=0 ; i < links.length ; i++){
+
+                            links[i].style.color = "white";
+
+                        } 
+                     
+
+                    }
+
+
+                }
+
+
+                document.getElementById("explore").onclick = function(){
+                    console.log("click")
+                        let topX = document.getElementById("features").offsetTop;
+                        console.log(topX)
+                       window.scrollTo({
+                        left: 0,
+                        top: topX,
+                        behavior:"smooth"
+                        });
+
+
+
+                }
+
+
+
+
+
+            }
 
 
 
